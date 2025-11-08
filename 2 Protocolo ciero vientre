@@ -64,11 +64,23 @@
     <p>Transforma tu abdomen y recupera tu confianza con un método natural y comprobado.</p>
   </header>
 
-  <div class="container">
-    <div class="video">
-      <!-- 🎬 VIDEO VTURB -->
-      <vturb-smartplayer id="vid-690e2f041a078823fdadef1c" style="display: block; margin: 0 auto; width: 100%; max-width: 600px;"></vturb-smartplayer>
-    </div>
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Teste Vturb</title>
+</head>
+<body>
+  <vturb-smartplayer id="vid-690e2f041a078823fdadef1c"></vturb-smartplayer>
+  
+  <script>
+    var s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/b54b1210-b65c-436b-ae22-a4d4fda71a39/players/690e2f041a078823fdadef1c/v4/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+  </script>
+</body>
+</html>
 
     <section>
       <h2 style="text-align:center; color:#ff5e99; font-size:1.8rem;">🌿 ¿Qué es el Protocolo Ciero Vientre?</h2>
