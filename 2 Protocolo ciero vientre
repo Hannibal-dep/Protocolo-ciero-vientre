@@ -35,6 +35,10 @@
             color: #333;
             line-height: 1.6;
         }
+        .main-content {
+            position: relative;
+            z-index: 1000;
+        }
         .header {
             background: white;
             text-align: center;
@@ -51,16 +55,20 @@
             margin: 0 auto;
             padding: 20px;
         }
-        .content {
+        .video-section {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .content-section {
             background: white;
             padding: 30px;
             border-radius: 15px;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .video-container {
-            text-align: center;
-            margin: 30px 0;
+            position: relative;
+            z-index: 1000;
         }
         .cta-button {
             display: block;
@@ -89,6 +97,7 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            border-left: 4px solid #ff5e99;
         }
         .testimonials {
             background: #f8f9fa;
@@ -96,78 +105,178 @@
             border-radius: 10px;
             margin: 30px 0;
         }
+        .before-after {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .before-after img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
         footer {
             text-align: center;
             padding: 20px;
             color: white;
+            background: rgba(0,0,0,0.2);
+            margin-top: 40px;
+        }
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff5e99;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 10000;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .floating-btn { display: block; }
+        }
+        
+        /* PROTECTION AGAINST VTURB */
+        .protected {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 1000 !important;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🔥 Protocolo Ciero Vientre</h1>
-        <p>Transforma tu abdomen y recupera tu confianza</p>
-    </div>
-
-    <div class="container">
-        <div class="content">
-            <div class="video-container">
-                <h2>🎥 Video Explicativo</h2>
-                <p>Descubre el método revolucionario</p>
-                <!-- ÁREA SEGURA PARA VÍDEO -->
-                <div style="background: #000; color: white; padding: 60px 20px; border-radius: 10px; margin: 20px 0;">
-                    <h3>📹 Contenido Exclusivo</h3>
-                    <p>Haz clic en el botón para ver el video completo</p>
-                </div>
-            </div>
-
-            <a href="https://pay.hotmart.com/X102804891T?off=27ogaj6g&checkoutMode=10" 
-               class="cta-button" 
-               onclick="fbq('track', 'InitiateCheckout');">
-               👉 QUIERO MI NUEVO CUERPO AHORA
-            </a>
-
-            <div class="benefits">
-                <div class="benefit">
-                    <h3>🔥 Elimina Grasa</h3>
-                    <p>Reduce centímetros de cintura</p>
-                </div>
-                <div class="benefit">
-                    <h3>💆‍♀️ Más Energía</h3>
-                    <p>Mejora tu bienestar general</p>
-                </div>
-                <div class="benefit">
-                    <h3>🥗 Alimentación Sana</h3>
-                    <p>Método 100% natural</p>
-                </div>
-            </div>
-
-            <div class="testimonials">
-                <h2>💬 Testimonios Reales</h2>
-                <p>"Perdí 8 cm de cintura en 3 semanas" - María G.</p>
-                <p>"Me siento con más energía y confianza" - Laura P.</p>
-            </div>
-
-            <a href="https://pay.hotmart.com/X102804891T?off=27ogaj6g&checkoutMode=10" 
-               class="cta-button" 
-               onclick="fbq('track', 'InitiateCheckout');">
-               💥 OBTÉN ACCESO INMEDIATO
-            </a>
+    <!-- CONTEÚDO PROTEGIDO -->
+    <div class="main-content">
+        <div class="header">
+            <h1>🔥 Protocolo Ciero Vientre</h1>
+            <p>Transforma tu abdomen y recupera tu confianza con método natural</p>
         </div>
+
+        <div class="container">
+            <!-- SEÇÃO DO VÍDEO -->
+            <div class="video-section">
+                <h2>🎥 Descubre el Protocolo</h2>
+                <div id="vturb-container">
+                    <vturb-smartplayer id="vid-690e2f041a078823fdadef1c"></vturb-smartplayer>
+                </div>
+            </div>
+
+            <!-- CONTEÚDO PRINCIPAL PROTEGIDO -->
+            <div class="content-section protected">
+                <h2 style="text-align: center; color: #ff5e99; margin-bottom: 20px;">
+                    🌿 ¿Qué es el Protocolo Ciero Vientre?
+                </h2>
+                <p style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">
+                    Un programa revolucionario que combina alimentación inteligente, rutinas simples 
+                    y técnicas naturales para reducir grasa abdominal y mejorar tu bienestar general.
+                </p>
+
+                <div class="benefits">
+                    <div class="benefit">
+                        <h3>🔥 Elimina Grasa Abdominal</h3>
+                        <p>Reduce centímetros de cintura con enfoque saludable</p>
+                    </div>
+                    <div class="benefit">
+                        <h3>💆‍♀️ Mejora Bienestar</h3>
+                        <p>Más energía, menos estrés, mejor calidad de vida</p>
+                    </div>
+                    <div class="benefit">
+                        <h3>🥗 Alimentación Consciente</h3>
+                        <p>Alimentos que aceleran tu metabolismo naturalmente</p>
+                    </div>
+                </div>
+
+                <div class="before-after">
+                    <div>
+                        <img src="https://i.imgur.com/fX5Qhbd.jpg" alt="Antes">
+                        <p style="text-align: center; font-weight: bold;">ANTES</p>
+                    </div>
+                    <div>
+                        <img src="https://i.imgur.com/FpGvhXe.jpg" alt="Después">
+                        <p style="text-align: center; font-weight: bold;">DESPUÉS</p>
+                    </div>
+                </div>
+
+                <div class="testimonials">
+                    <h2 style="text-align: center; color: #ff5e99; margin-bottom: 20px;">💬 Testimonios Reales</h2>
+                    <p>"<em>Llevaba años intentando bajar el vientre y con este protocolo vi resultados en menos de 3 semanas.</em>" — <strong>María G.</strong></p>
+                    <p>"<em>Me siento con más energía y mi ropa me queda mejor. ¡Vale totalmente la pena!</em>" — <strong>Laura P.</strong></p>
+                    <p>"<em>Nunca imaginé que algo tan simple pudiera cambiar tanto mi cuerpo.</em>" — <strong>Rosa L.</strong></p>
+                </div>
+
+                <a href="https://pay.hotmart.com/X102804891T?off=27ogaj6g&checkoutMode=10" 
+                   class="cta-button" 
+                   onclick="fbq('track', 'InitiateCheckout');">
+                   👉 QUIERO MI NUEVO CUERPO AHORA
+                </a>
+
+                <a href="https://pay.hotmart.com/X102804891T?off=27ogaj6g&checkoutMode=10" 
+                   class="cta-button" 
+                   onclick="fbq('track', 'InitiateCheckout');">
+                   💥 OBTÉN ACCESO INMEDIATO
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Protocolo Ciero Vientre - Todos los derechos reservados</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>© 2025 Protocolo Ciero Vientre - Todos los derechos reservados</p>
-    </footer>
+    <!-- BOTÃO FLUTUANTE -->
+    <a href="https://pay.hotmart.com/X102804891T?off=27ogaj6g&checkoutMode=10" 
+       class="floating-btn" 
+       onclick="fbq('track', 'InitiateCheckout');">
+       💥 COMPRAR AHORA
+    </a>
 
+    <!-- SCRIPT VTURB CONTROLADO -->
     <script>
-        // Eventos do Pixel
-        setTimeout(function() {
-            fbq('track', 'ViewContent', {
-                content_name: 'Protocolo Ciero Vientre',
-                content_category: 'Salud'
+        // Proteger conteúdo contra Vturb
+        function protectContent() {
+            const elements = document.querySelectorAll('.main-content, .content-section, .benefits, .testimonials, .before-after');
+            elements.forEach(el => {
+                el.style.display = 'block';
+                el.style.visibility = 'visible';
+                el.style.opacity = '1';
+                el.style.position = 'relative';
+                el.style.zIndex = '1000';
             });
-        }, 15000);
+        }
+
+        // Carregar Vturb após proteção
+        window.addEventListener('load', function() {
+            protectContent();
+            
+            // Carregar Vturb
+            var s = document.createElement("script");
+            s.src = "https://scripts.converteai.net/b54b1210-b65c-436b-ae22-a4d4fda71a39/players/690e2f041a078823fdadef1c/v4/player.js";
+            s.async = true;
+            document.body.appendChild(s);
+
+            // Proteção contínua
+            setInterval(protectContent, 500);
+        });
+
+        // Eventos do Pixel
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                fbq('track', 'ViewContent', {
+                    content_name: 'Protocolo Ciero Vientre',
+                    content_category: 'Salud'
+                });
+            }, 15000);
+        });
     </script>
 </body>
 </html>
