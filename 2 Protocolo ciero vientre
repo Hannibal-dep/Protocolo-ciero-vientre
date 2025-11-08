@@ -66,7 +66,7 @@
 
   <div class="container">
     <div class="video">
-      <!-- 🎬 VIDEO VTURB CORRETO -->
+      <!-- 🎬 VIDEO VTURB -->
       <vturb-smartplayer id="vid-690e2f041a078823fdadef1c" style="display: block; margin: 0 auto; width: 100%; max-width: 600px;"></vturb-smartplayer>
     </div>
 
@@ -111,21 +111,20 @@
     <p>© 2025 Protocolo Ciero Vientre | Todos los derechos reservados</p>
   </footer>
 
-  <!-- SCRIPTS NO FINAL - APENAS UMA VEZ -->
+  <!-- SCRIPTS NO FINAL -->
   <script type="text/javascript">
-    // Script do Vturb - CARREGADO NO FINAL (APENAS UMA VEZ)
+    // Script do Vturb
     var s = document.createElement("script");
     s.src = "https://scripts.converteai.net/b54b1210-b65c-436b-ae22-a4d4fda71a39/players/690e2f041a078823fdadef1c/v4/player.js";
     s.async = true;
     document.body.appendChild(s);
   </script>
 
-  <!-- Eventos Adicionais do Facebook Pixel -->
+  <!-- Eventos do Facebook Pixel -->
   <script>
-    // Aguardar a página carregar
     document.addEventListener('DOMContentLoaded', function() {
       
-      // Rastrear visualização de conteúdo (30 segundos no site)
+      // Rastrear visualização de conteúdo
       setTimeout(function() {
         fbq('track', 'ViewContent', {
           content_name: 'Protocolo Ciero Vientre',
@@ -135,7 +134,7 @@
         });
       }, 30000);
 
-      // Rastrear quando usuário rola a página (interesse)
+      // Rastrear quando usuário rola a página
       let scrollTracked = false;
       window.addEventListener('scroll', function() {
         if (!scrollTracked && window.scrollY > 500) {
@@ -144,7 +143,7 @@
         }
       });
 
-      // Rastrear clique nas imagens (engajamento)
+      // Rastrear clique nas imagens
       document.querySelectorAll('.before-after img').forEach(function(img) {
         img.addEventListener('click', function() {
           fbq('track', 'ViewContent', {
